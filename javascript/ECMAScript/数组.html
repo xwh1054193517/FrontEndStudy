@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    // 数组是指一组数据的集合，其中每个数据被称为元素。
+    // 数组对象的作用是：使用单独的变量名来存储一系列的值。
+
+    // 利用new 创建数组
+    var arr = new Array(); // 创建了一个空的数组
+
+    // 利用数组字面量创建数组 []
+    var arr = []; // 创建了一个空的数组
+    var arr1 = [1, 2, '勾八', true];
+    console.log(arr);
+    console.log(arr1);
+    // arr.length 动态监测数组元素的个数
+
+    // 1. 新增数组元素 修改length长度 
+    var arr = ['red', 'green', 'blue'];
+    console.log(arr.length);
+    arr.length = 5; // 把我们数组的长度修改为了 5  里面应该有5个元素 
+    console.log(arr);
+    console.log(arr[3]); // undefined
+    console.log(arr[4]); // undefined
+
+    // 2. 新增数组元素 修改索引号 追加数组元素
+    var arr1 = ['red', 'green', 'blue'];
+    arr1[3] = 'pink';
+    console.log(arr1);
+    arr1[4] = 'hotpink';
+    console.log(arr1);
+    arr1[0] = 'yellow'; // 这里是替换原来的数组元素
+    console.log(arr1);
+    arr1 = '有点意思';
+    console.log(arr1); // 不要直接给 数组名赋值 否则里面的数组元素都没有了
+
+
+    // 合并数组concat()
+    // 用数组的元素组成字符串join()
+    // 删除数组最后一个元素pop()
+    // 数组末尾添加新元素push()
+    // 删除数组第一个元素shift()
+    // 在数组开头添加新元素unshift()
+    // 数组排序sort()
+    // 把数组中元素顺序反转排序reverse()
+    // 从一个数组中选择元素slice() slice(1, 3) 选择下标为1， 2 的元素
+    // splice() 从数组中添加元素 splice(2, 1, a, b) 在下标为2处 删除一个元素， 加入a, b 返回删除的数组
+
+    // 冒泡排序
+    var arr = []
+    var n = prompt("冒泡排序数组个数")
+    for (var a = 0; a < n; a++) {
+        arr[a] = prompt("请输入数组")
+    }
+    for (var i = 0; i < n; i++) {
+        for (var j = 0; j < n - i - 1; j++) {
+            if (arr[j] > arr[j + 1]) {
+                var temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
+    console.log('排序后的数组' + arr);
+</script>
+
+
+<body>
+
+</body>
+
+</html>

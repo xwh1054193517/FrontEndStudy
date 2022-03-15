@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>栅格系统</title>
+    <link rel="stylesheet" href="./bootstrap-3.4.1-dist/css/bootstrap.min.css">
+
+    <style>
+        .container div {
+            height: 50px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- bootStrap3将网页默认分成12等份
+  栅格化是将整个网页的宽度分成若干等分 -->
+    <!-- 需求: 大屏: 一行排列4个内容; 中屏:一行排列2个内容 -->
+
+    <!-- 超小屏幕<768px  col-xs
+    小屏幕>=768px  col-sm
+    中等屏幕>=992px col-md 
+    大屏幕>=1200px  col-lg
+    数字表示占几分 -->
+    <div class="container">
+        <div class="col-lg-3 col-md-6">1</div>
+        <div class="col-lg-3 col-md-6">2</div>
+        <div class="col-lg-3 col-md-6">3</div>
+        <div class="col-lg-3 col-md-6">4</div>
+    </div>
+
+</body>
+
+</html>

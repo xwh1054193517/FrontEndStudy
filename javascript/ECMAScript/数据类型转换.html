@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    // 转换为字符串的方法
+    //   toString()转换成字符串
+    //   String()强制转换
+    //   加号拼接字符串
+    // 1. 把数字型转换为字符串型 变量.toString()
+    var num = 10;
+    var str = num.toString();
+    console.log(str);
+    console.log(typeof str);
+    // 2. 我们利用 String(变量)   
+    console.log(String(num));
+    // 3. 利用 + 拼接字符串的方法实现转换效果 隐式转换
+    console.log(num + '');
+
+
+    // 转换为数字型的方法
+    // parseInt(变量)  可以把 字符型的转换为数字型 得到是整数
+    console.log(parseInt('3.14')); // 3 取整
+    console.log(parseInt('3.94')); // 3 取整
+    console.log(parseInt('120px')); // 120 会去到这个px单位
+    console.log(parseInt('rem120px')); // NaN
+    // 2. parseFloat(变量) 可以把 字符型的转换为数字型 得到是小数 浮点数
+    console.log(parseFloat('3.14')); // 3.14
+    console.log(parseFloat('120px')); // 120 会去掉这个px单位
+    console.log(parseFloat('rem120px')); // NaN
+    // 3. 利用 Number(变量) 
+    var str = '123';
+    console.log(Number(str));
+    console.log(Number('12'));
+    // 4. 利用了算数运算 -  *  /  隐式转换
+    console.log('12' - 0); // 12
+    console.log('123' - '120');
+    console.log('123' * 1);
+
+
+    // 转换为布尔型
+    // 代表空、 否定的值都会被转换为false
+    console.log(Boolean('')); // false
+    console.log(Boolean(0)); // false
+    console.log(Boolean(NaN)); // false
+    console.log(Boolean(null)); // false
+    console.log(Boolean(undefined)); // false
+</script>
+
+<body>
+
+</body>
+
+</html>

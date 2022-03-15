@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- BOM Browser Object Model 浏览器对象模型 提供独立于内容而与浏览器窗口进行交互的对象，核心对象是window
+把浏览器当作一个对象 兼容性较差 -->
+
+<!-- Window包含document location navigation screen history -->
+<!-- window常见事件 -->
+<style>
+    div {
+        width: 200px;
+        height: 200px;
+        background-color: pink;
+    }
+</style>
+
+<body>
+    <button>点击</button>
+    <div></div>
+</body>
+<script>
+    // load和Domcontentloaded
+    // load 等页面内容全部加载完毕，包含页面dom元素 图片 flash  css 等等
+    // DOMContentLoaded 是DOM 加载完毕，不包含图片 falsh css 等就可以执行 加载速度比 load更快一些
+    window.addEventListener('load', function() {
+        var btn = document.querySelector('button');
+        btn.addEventListener('click', function() {
+            alert('点击我');
+        })
+
+        // 调整窗口大小
+        var div = document.querySelector('div');
+        // window.onresize 是调整窗口大小加载事件，当触发时就调用的处理函数
+        window.addEventListener('resize', function() {
+            console.log(window.innerWidth);
+
+            console.log('变化了');
+            if (window.innerWidth <= 800) {
+                div.style.display = 'none';
+            } else {
+                div.style.display = 'block';
+            }
+
+        })
+    })
+
+    window.addEventListener('load', function() {
+
+        alert(22);
+    })
+    document.addEventListener('DOMContentLoaded', function() {
+        alert(33);
+    })
+
+    // 调整窗口大小事件
+</script>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./lib/jquery.js"></script>
+</head>
+
+<body>
+    <script>
+        // 出现的早，兼容性好（兼容低版本IE）。是前端程序员为了解决跨域问题，被迫想出来的一种临时解决方案。
+        // 缺点是只支持 GET 请求，不支持 POST 请求。
+
+        // jsonp json with padding是json的一种使用模式 可用于解决主流浏览器的跨域数据访问的问题。
+
+        // 原理：<script> 标签不受浏览器同源策略的影响，可以通过 src 属性，请求非同源的 js 脚本。
+        // 通过 <script> 标签的 src 属性，请求跨域的数据接口，并通过函数调用的形式，接收跨域接口响应回来的数据。
+
+        // $.ajax({
+        //     method: 'GET',
+        //     url: 'http://ajax.frontend.itheima.net:3006/api/jsonp',
+        //     data: {
+        //         name: 'zs',
+        //         age: 20
+        //     },
+        //     success: function(res) {
+        //         console.log(res)
+        //     }
+        // })
+        function success(data) {
+            console.log('拿到了data数据');
+            console.log(data);
+        }
+    </script>
+    <script src="http://ajax.frontend.itheima.net:3006/api/jsonp?callback=success&name=zs&age=20"></script>
+</body>
+
+</html>

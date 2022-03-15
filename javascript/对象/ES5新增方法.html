@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // 数组方法
+        // 迭代(遍历) 方法： foreach()， map()， filter()， some()， every();
+
+
+        // array.forEach(function(currentValue,index,arr))
+        // currentValue : 数组当前项的值
+        // index: 数组当前项的索引
+        // arr: 数组对象本身
+        var arr = [1, 2, 3];
+        var sum = 0;
+        arr.forEach(function(value, index, array) {
+            console.log('每个数组元素' + value);
+            console.log('每个数组元素的索引号' + index);
+            console.log('数组本身' + array);
+            sum += value;
+        })
+        console.log(sum);
+
+
+        // filter()筛选数组
+        // array.filter(function(currentValue,index,arr))
+        // filter()方法创建一个新的数组，新数组中的元素是通过检查指定数组中符合条件的所有元素，主要用于筛选数组
+        // 注意它直接返回一个新数组
+        var arr = [12, 66, 4, 88, 3, 7];
+        var newArr = arr.filter(function(value, index) {
+            // return value >= 20;
+            return value % 2 === 0;
+        });
+        console.log(newArr);
+
+        // some()方法用于检测数组中的元素是否满足指定条件（查找数组中是否有满足条件的元素）
+        // 注意它返回的是布尔值，如果查找到这个元素，就返回true，如果查找不到就返回false
+        // 如果找到第一个满足条件的元素，则终止循环，不再继续查找
+        var arr1 = ['red', 'pink', 'blue'];
+        var flag1 = arr1.some(function(value) {
+            return value == 'pink';
+        });
+        console.log(flag1);
+        // 1. filter 也是查找满足条件的元素 返回的是一个数组 而且是把所有满足条件的元素返回回来
+        // 2. some 也是查找满足条件的元素是否存在  返回的是一个布尔值 如果查找到第一个满足条件的元素就终止循环
+
+
+        //         trim()方法会从一个字符串的两端删除空白字符
+        // trim()方法并不影响原字符串本身，它返回的是一个新的字符串
+
+
+        //         Object.keys()用于获取对象自身所有的属性
+        // 效果类似for...in
+        // 返回一个由属性名组成的数组
+        var obj = {
+            id: 1,
+            pname: '小米',
+            price: 1999,
+            num: 2000
+        };
+        var arr = Object.keys(obj);
+        console.log(arr);
+        arr.forEach(function(value) {
+            console.log(value);
+            // id
+            // pname
+            // price
+            // num
+        })
+
+        //         Object.defineProperty()定义对象中新属性或修改原有的属性(了解)
+        //         Object.defineProperty(obj,prop,descriptor)
+        // obj : 目标对象
+        // prop : 需定义或修改的属性的名字
+        // descriptor : 目标属性所拥有的特性
+        // 第三个参数 descriptor 说明：以对象形式{ }书写
+        // value：设置属性的值，默认为undefined
+        // writeable: 值是否可以重写 true | false 默认为false
+        // enumerable: 目标属性是否可以被枚举 true | false 默认为false
+        // configurable: 目标属性是否可以被删除或是否可以再次修改特性 true | false 默认为false
+    </script>
+</body>
+
+</html>

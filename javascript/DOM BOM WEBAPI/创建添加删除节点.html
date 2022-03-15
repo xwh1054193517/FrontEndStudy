@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>123</li>
+    </ul>
+
+
+    <button>删除</button>
+    <ul class="del">
+        <li>熊大</li>
+        <li>熊二</li>
+        <li>光头强</li>
+    </ul>
+
+
+    <ul class="clone">
+        <li>1111</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+</body>
+<script>
+    // 创建节点
+    // 1. 创建节点元素节点
+    var li = document.createElement('li');
+    li.innerHTML = '插进来1'
+        // 2. 添加节点 node.appendChild(child)  node 父级  child 是子级 后面追加元素  类似于数组中的push
+    var ul = document.querySelector('ul');
+    console.log(ul.children);
+    ul.appendChild(li);
+    // 3. 添加节点 node.insertBefore(child, 指定元素);
+    var lili = document.createElement('li');
+    lili.innerHTML = '插进来2'
+    console.log(ul.children);
+    ul.insertBefore(lili, ul.children[0]);
+    console.log(ul.children);
+    // 4. 我们想要页面添加一个新的元素 ： 1. 创建元素 2. 添加元素
+
+
+    // 删除节点
+    // 1.获取元素
+    var ul = document.querySelector('.del');
+    var btn = document.querySelector('button');
+    // 2. 删除元素  node.removeChild(child)
+    // ul.removeChild(ul.children[0]);
+    // 3. 点击按钮依次删除里面的孩子
+    btn.onclick = function() {
+        if (ul.children.length == 0) {
+            this.disabled = true;
+        } else {
+            ul.removeChild(ul.children[0]);
+        }
+    }
+
+
+    // 克隆节点
+    var ul = document.querySelector('.clone');
+    // 1. node.cloneNode(); 括号为空或者里面是false 浅拷贝 只复制标签不复制里面的内容
+    // 2. node.cloneNode(true); 括号为true 深拷贝 复制标签复制里面的内容
+    var lili = ul.children[0].cloneNode(true);
+    var lilia = ul.children[0].cloneNode();
+    ul.appendChild(lili);
+    ul.appendChild(lilia);
+</script>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 同源：如果两个页面的协议，域名和端口都相同，则两个页面具有相同的源。
+        // 同源策略（英文全称 Same origin policy）是浏览器提供的一个安全功能。
+        // 同源策略限制了从同一个源加载的文档或脚本如何与来自另一个源的资源进行交互。这是一个用于隔离潜在恶意文件的重要安全机制。
+
+        // A 网站的 JavaScript， 不允许和非同源的网站 C 之间， 进行资源的交互， 例如：
+        // 无法读取非同源网页的 Cookie、 LocalStorage 和 IndexedDB
+        // 无法接触非同源网页的 DOM
+        // 无法向非同源地址发送 Ajax 请求
+
+
+        // 跨域
+        // 同源指的是两个 URL 的协议、域名、端口一致，（任何一项不一致）反之，则是跨域
+        // 浏览器的同源策略不允许非同源的 URL 之间进行资源的交互。
+        // 跨域请求可以正常发起，但是浏览器会因为同源策略拦截接受的数据
+
+        // 跨域解决方式
+        // 1： 响应头添加Header允许访问
+        // 跨域资源共享（ CORS） Cross - Origin Resource Sharing
+        // 这个跨域访问的解决方案的安全基础是基于 "JavaScript无法控制该HTTP头"
+        // 它需要通过目标域返回的HTTP头来授权是否允许跨域访问。
+        // response.addHeader(‘Access - Control - Allow - Origin: * ’); //允许所有来源访问 
+        // response.addHeader(‘Access - Control - Allow - Method: POST, GET’); //允许访问的方式
+    </script>
+</body>
+
+</html>

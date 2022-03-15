@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- exec() 函数用于检索字符串中的正则表达式的匹配。
+如果字符串中有匹配的值，则返回该匹配值，否则返回 null。 -->
+
+<!-- 
+正则表达式中 ( ) 包起来的内容表示一个分组，可以通过分组来提取自己想要的内容， -->
+
+<body>
+
+</body>
+<script>
+    // var str = 'hello'
+    // var pattern = /x/
+    // var result = pattern.exec(str)
+    // console.log(result);
+
+    // var str1 = '<div>我是{{name}}</div>'
+    // var pattern1 = /{{([a-zA-Z]+)}}/
+    // var result1 = pattern1.exec(str1)
+    // console.log(result1);
+    // str1 = str1.replace(result1[0], result1[1])
+    // console.log(str1);
+
+
+
+    var data = {
+        name: '张三',
+        age: 20
+    }
+
+    var str = '<div>{{name}}今年{{ age }}岁了</div>'
+    var pattern = /{{\s*([a-zA-Z]+)\s*}}/
+
+    var patternResult = null
+    while (patternResult = pattern.exec(str)) {
+        console.log(patternResult);
+        str = str.replace(patternResult[0], data[patternResult[1]])
+    }
+    console.log(str)
+</script>
+
+</html>

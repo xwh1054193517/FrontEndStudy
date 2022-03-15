@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // XMLHttpRequest（简称 xhr）是浏览器提供的 Javascript 对象，通过它，可以请求服务器上的数据资源。之前所学的 jQuery 中的 Ajax 函数，就是基于 xhr 对象封装出来的。
+        // 值	状态	描述
+        // 0	UNSENT	XMLHttpRequest 对象已被创建，但尚未调用 open方法。
+        // 1	OPENED	open() 方法已经被调用。
+        // 2	HEADERS_RECEIVED	send() 方法已经被调用，响应头也已经被接收。
+        // 3	LOADING	数据接收中，此时 response 属性中已经包含部分数据。
+        // 4	DONE	Ajax 请求完成，这意味着数据传输已经彻底完成或失败。
+
+        // GET方法
+        // 创建 xhr 对象
+        var xhr = new XMLHttpRequest()
+            // 查询字符串（URL 参数）是指在 URL 的末尾加上用于向服务器发送信息的字符串（变量）
+            // 调用 xhr.open() 函数 可以在连接后面加？id=1&bookname=西游记
+        xhr.open('GET', 'http://www.liulongbin.top:3006/api/getbooks')
+            // 调用 xhr.send() 函数
+        xhr.send()
+            // 监听 xhr.onreadystatechange 事件
+        xhr.onreadystatechange = function() {
+            // 监听 xhr 对象的请求状态 readyState ；与服务器响应的状态 status
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                // 获取服务器响应的数据
+                console.log(xhr.responseText);
+            }
+        }
+
+
+
+        // Post请求
+        // 创建  xhr  对象
+        var xhr0 = new XMLHttpRequest()
+            // 调用  xhr.open()  函数
+        xhr0.open('POST', 'http://www.liulongbin.top:3006/api/addbook')
+            // 设置  Content - Type  属性（ 固定写法）
+        xhr0.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
+            // 调用  xhr.send()  函数， 同时指定要发送的数据
+        xhr0.send('bookname=水浒传&author=施耐庵&publisher=天津图书出版社')
+            // 监听  xhr.onreadystatechange  事件
+        xhr0.onreadystatechange = function() {
+            // 监听 xhr 对象的请求状态 readyState ；与服务器响应的状态 status
+            if (xhr0.readyState === 4 && xhr0.status === 200) {
+                // 获取服务器响应的数据
+                console.log(xhr0.responseText);
+            }
+        }
+    </script>
+</body>
+
+</html>

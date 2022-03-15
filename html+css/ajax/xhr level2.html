@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 旧版XMLHttpRequest的缺点
+        // 只支持文本数据的传输， 无法用来读取和上传文件
+        // 传送和接收数据时， 没有进度信息， 只能提示有没有完成
+
+        // XMLHttpRequest Level2的新功能
+        // 可以设置 HTTP 请求的时限
+        // 可以使用 FormData 对象管理表单数据
+        // 可以上传文件
+        // 可以获得数据传输的进度信息
+
+        // 设置HTTP请求时限
+        var xhr = new XMLHttpRequest()
+            // 设置 超时时间 毫秒
+        xhr.timeout = 30
+            // 设置超时以后的处理函数
+        xhr.ontimeout = function() {
+            console.log('请求超时了！')
+        }
+
+        xhr.open('GET', 'http://www.liulongbin.top:3006/api/getbooks')
+        xhr.send()
+
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                console.log(xhr.responseText)
+            }
+        }
+
+
+        // FormData对象管理表单数据
+        // 1. 创建 FormData 实例
+        var fd = new FormData()
+            // 2. 调用 append 函数，向 fd 中追加数据
+        fd.append('uname', 'zs')
+        fd.append('upwd', '123456')
+
+        var xhr = new XMLHttpRequest()
+        xhr.open('POST', 'http://www.liulongbin.top:3006/api/formdata')
+        xhr.send(fd)
+
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                console.log(JSON.parse(xhr.responseText))
+            }
+        }
+    </script>
+</body>
+
+</html>

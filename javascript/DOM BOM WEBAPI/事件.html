@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- 网页中每个元素可以产生某些可以触发js的事件，如点击按钮产生一个事件，然后去执行某些操作
+ -->
+
+<!-- 触发——响应机制 -->
+<!-- 事件3部分：
+事件源     事件被触发的对象
+事件类型   如何触发 什么事件 比如鼠标点击(onclick) 还是鼠标经过 还是键盘按下
+事件处理程序 通过一个函数赋值的方式 
+-->
+<style>
+    div,
+    p {
+        width: 300px;
+        height: 30px;
+        line-height: 30px;
+        color: #fff;
+        background-color: pink;
+    }
+</style>
+
+<body>
+    <!-- <button id="btn">唐伯虎</button>
+    <div>123</div> -->
+
+
+    <button>显示当前系统时间</button>
+    <div>某个时间</div>
+    <p>1123</p>
+</body>
+
+<script>
+    // var btn = document.getElementById('btn');
+    // btn.onclick = function() {
+    //     alert('点击了')
+    // };
+
+
+
+    // 执行事件步骤
+    // 点击div 控制台输出 我被选中了
+    // 1. 获取事件源
+    var div = document.querySelector('div');
+    // 2.绑定事件 注册事件
+    // div.onclick 
+    // 3.添加事件处理程序 
+    div.onclick = function() {
+        console.log('我被选中了')
+    }
+
+
+    // 鼠标事件 
+    // onclick鼠标左键点击
+    // onmouseover鼠标经过触发
+    // onmouseout鼠标离开触发
+    // onfocus获得鼠标焦点触发
+    // onblur失去鼠标焦点出发
+    // onmousemove鼠标移动触发
+    // onmouseup鼠标弹起触发
+    // onmousedown鼠标按下触发
+    // 首先当鼠标按钮被点击时，onmousedown 事件被触发；然后当鼠标按钮被释放时，onmouseup 事件被触发；最后，当鼠标点击完成后，onclick 事件被触发。
+
+    // 1. 获取元素 
+    var btn = document.querySelector('button');
+    var div = document.querySelector('div');
+    // 2.注册事件
+    btn.onclick = function() {
+        // div.innerText = '2019-6-6';
+        div.innerHTML = getDate();
+    }
+
+    function getDate() {
+        var date = new Date();
+        // 我们写一个 2019年 5月 1日 星期三
+        var year = date.getFullYear();
+        var month = date.getMonth() + 1;
+        var dates = date.getDate();
+        var arr = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
+        var day = date.getDay();
+        return '今天是：' + year + '年' + month + '月' + dates + '日 ' + arr[day];
+    }
+    // 我们元素可以不用添加事件
+    var p = document.querySelector('p');
+    p.innerHTML = getDate();
+</script>
+
+</html>

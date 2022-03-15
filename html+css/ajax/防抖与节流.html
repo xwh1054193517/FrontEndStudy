@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 防抖策略（debounce）是当事件被触发后，延迟 n 秒后再执行回调，如果在这 n 秒内事件又被触发，则重新计时。
+        var timer = null // 1. 防抖动的 timer
+
+        function debounceSearch(keywords) { // 2. 定义防抖的函数
+            timer = setTimeout(function() {
+                // 发起 JSONP 请求
+                getSuggestList(keywords)
+            },  500)
+        }
+
+        $('#ipt').on('keyup',  function() { // 3. 在触发 keyup 事件时，立即清空 timer
+            clearTimeout(timer)
+                // ...省略其他代码
+            debounceSearch(keywords)
+        })
+
+        // 节流策略（ throttle）， 顾名思义， 可以减少一段时间内事件的触发频率。
+        // 鼠标连续不断地触发某事件（ 如点击）， 只在单位时间内只触发一次；
+        // 懒加载时要监听计算滚动条的位置， 但不必每次滑动都触发， 可以降低计算的频率， 而不必去浪费 CPU 资源；
+
+        // 节流阀为空， 表示可以执行下次操作； 不为空， 表示不能执行下次操作。
+        // 当前操作执行完， 必须将节流阀重置为空， 表示可以执行下次操作了。
+        // 每次执行操作前， 必须先判断节流阀是否为空。
+    </script>
+</body>
+
+</html>

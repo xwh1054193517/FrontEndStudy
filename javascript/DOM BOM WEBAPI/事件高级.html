@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>传统注册事件</button>
+    <button>方法监听注册事件</button>
+    <button>ie9 attachEvent</button>
+
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+</body>
+<script>
+    // 传统注册
+    var btns = document.querySelectorAll('button')
+    btns[0].onclick = function() {
+            alert('hi')
+        }
+        //1 事件侦听注册事件 addEventListener 
+        // eventTarget.addEventListener(type,listener[,useCapture]) 第三个参数true表示捕获阶段触发函数 false表示冒泡阶段
+        // (1) 里面的事件类型是字符串 必定加引号 而且不带on
+        // (2) 同一个元素 同一个事件可以添加多个侦听器（事件处理程序）
+    btns[1].addEventListener('click', function() {
+            alert(22);
+        })
+        // 2 attachEvent ie9以前的版本支持
+        // btns[2].attachEvent('onclick', function() {
+        //     alert(11);
+        // })
+
+    // // 兼容性
+    // function addEventListener(element, eventName, fn) {
+    //     // 判断当前浏览器是否支持 addEventListener 方法
+    //     if (element.addEventListener) {
+    //         element.addEventListener(eventName, fn); // 第三个参数 默认是false
+    //     } else if (element.attachEvent) {
+    //         element.attachEvent('on' + eventName, fn);
+    //     } else {
+    //         // 相当于 element.onclick = fn;
+    //         element['on' + eventName] = fn;
+    //     }
+    // }
+
+    // 删除事件
+    var divs = document.querySelectorAll('div');
+    divs[0].onclick = function() {
+            alert(11);
+            // 1. 传统方式删除事件
+            divs[0].onclick = null;
+        }
+        // 2. removeEventListener 删除事件
+    divs[1].addEventListener('click', fn) // 里面的fn 不需要调用加小括号
+
+    function fn() {
+        alert(22);
+        divs[1].removeEventListener('click', fn);
+    }
+    // 3. detachEvent
+    // divs[2].attachEvent('onclick', fn1);
+
+    // function fn1() {
+    //     alert(33);
+    //     divs[2].detachEvent('onclick', fn1);
+    // }
+</script>
+
+</html>

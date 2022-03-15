@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="ldh">刘德华</button>
+    <button id="zxy">张学友</button> <br>
+    <img src="images/ldh.jpg" alt="" title="刘德华">
+
+
+    <button id="btn1">按钮</button>
+    <input type="text" value="输入内容">
+
+    <div></div>
+</body>
+<script>
+    // 修改元素属性  src
+    // 1. 获取元素
+    var ldh = document.getElementById('ldh');
+    var zxy = document.getElementById('zxy');
+    var img = document.querySelector('img');
+    // 2. 注册事件  处理程序
+    zxy.onclick = function() {
+        img.src = 'images/zxy.jpg';
+        img.title = '张学友思密达';
+    }
+    ldh.onclick = function() {
+        img.src = 'images/ldh.jpg';
+        img.title = '刘德华';
+    }
+
+    var btn1 = document.getElementById('btn1')
+    var input = document.querySelector('input')
+    btn1.onclick = function() {
+        // input.innerHTML = '点击了';  这个是 普通盒子 比如 div 标签里面的内容
+        // 表单里面的值 文字内容是通过 value 来修改的
+        input.value = '被点击了';
+        // 如果想要某个表单被禁用 不能再点击 disabled  我们想要这个按钮 button禁用
+        // btn.disabled = true;
+        this.disabled = true;
+        // this 指向的是事件函数的调用者 btn
+    }
+
+
+    // 1. 获取元素
+    var div = document.querySelector('div');
+    // 2. 注册事件 处理程序
+    div.onclick = function() {
+        // div.style里面的属性 采取驼峰命名法 
+        this.style.backgroundColor = 'purple';
+        this.style.width = '250px';
+    }
+</script>
+
+</html>

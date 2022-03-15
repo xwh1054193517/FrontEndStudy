@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <img src="images/ad.jpg" alt="" class="ad">
+    <button>点击停止定时器</button>
+
+    <button class="begin">开启定时器</button>
+    <button class="stop">停止定时器</button>
+    <script>
+        // setTimeout  延时时间到了，就去调用这个回调函数，只调用一次 就结束了这个定时器
+        // setInterval  每隔这个延时时间，就去调用这个回调函数，会调用很多次，重复调用这个函数
+        // 1. setTimeout 
+        // 语法规范：  window.setTimeout(调用函数, 延时时间);
+        // 1. 这个window在调用的时候可以省略
+        // 2. 这个延时时间单位是毫秒 但是可以省略，如果省略默认的是0
+        // 3. 这个调用函数可以直接写函数 还可以写 函数名 还有一个写法 '函数名()'
+        // 4. 页面中可能有很多的定时器，我们经常给定时器加标识符 （名字)
+        // setTimeout(function() {
+        //     console.log('时间到了');
+
+        // }, 2000);
+        function callback() {
+            console.log('爆炸了');
+
+        }
+        var timer1 = setTimeout(callback, 3000);
+        var timer2 = setTimeout(callback, 5000);
+        // setTimeout('callback()', 3000); // 我们不提倡这个写法
+        var ad = document.querySelector('.ad')
+        setTimeout(function() {
+            ad.style.display = 'none'
+        }, 5000)
+
+        var btn = document.querySelector('button');
+        btn.addEventListener('click', function() {
+            clearTimeout(timer1);
+        })
+
+
+        // setInterval 语法规范：  window.setInterval(调用函数, 延时时间);
+        // setInterval(function() {
+        //     console.log('继续输出');
+
+        // }, 1000);
+
+
+        var begin = document.querySelector('.begin');
+        var stop = document.querySelector('.stop');
+        var timer = null; // 全局变量  null是一个空对象
+        begin.addEventListener('click', function() {
+            timer = setInterval(function() {
+                console.log('ni hao ma');
+
+            }, 1000);
+        })
+        stop.addEventListener('click', function() {
+            clearInterval(timer);
+        })
+    </script>
+</body>
+
+</html>

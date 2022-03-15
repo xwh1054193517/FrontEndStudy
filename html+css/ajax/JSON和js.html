@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=
+  , initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 要实现从 JSON 字符串转换为 JS 对象，使用 JSON.parse() 方法：
+        // 字符串转换为数据对象的过程，叫做反序列化，例如：调用 JSON.parse() 函数的操作，叫做 JSON 反序列化。
+        var obj = JSON.parse('{"a": "Hello", "b": "World"}')
+        console.log(obj);
+        // 要实现从 JS 对象转换为 JSON 字符串，使用 JSON.stringify() 方法：
+        // 数据对象转换为字符串的过程，叫做序列化，例如：调用 JSON.stringify() 函数的操作，叫做 JSON 序列化
+        var json = JSON.stringify({
+            a: 'Hello',
+            b: 'World'
+        })
+        console.log(json);
+
+
+        var xhr = new XMLHttpRequest()
+        xhr.open('GET', 'http://www.liulongbin.top:3006/api/getbooks')
+        xhr.send()
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                console.log(xhr.responseText)
+                console.log(typeof xhr.responseText);
+
+                var result = JSON.parse(xhr.responseText)
+                console.log(result);
+            }
+        }
+    </script>
+</body>
+
+</html>

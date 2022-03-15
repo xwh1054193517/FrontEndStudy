@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="demo">
+        <div class="box">
+            <span class="erweima">×</span>
+        </div>
+    </div>
+    <ul>
+        <li name="3">我是li</li>
+        <li>我是li</li>
+        <li>我是li</li>
+        <li>我是li</li>
+    </ul>
+    <ol>
+        <li>我是li1</li>
+        <li>我是li2</li>
+        <li>我是li3</li>
+        <li>我是li4</li>
+        <li>我是li5</li>
+    </ol>
+
+
+    <div class="bro">我是div</div>
+    <span>我是span</span>
+    <script>
+        // DOM获取元素逻辑性不强，繁琐
+        // 利用节点层级关系获取元素 逻辑性强，兼容性差
+        // 节点概述： 节点类型NodeType 节点名称nodeName 节点值nodeValue
+        // 元素节点nodeType=1 属性节点nodeType=2 文本节点nodeType=3
+
+        // 父节点操作 parentNode
+        var erweima = document.querySelector('.erweima');
+        // var box = document.querySelector('.box');
+        // 得到的是离元素最近的父级节点(亲爸爸) 如果找不到父节点就返回为 null
+        console.log(erweima.parentNode);
+
+        //子节点childnode 不提倡使用
+        // DOM 提供的方法（API）获取
+        var ul = document.querySelector('ul');
+        var lis = ul.querySelectorAll('li');
+        // 1. 子节点  childNodes 所有的子节点 包含 元素节点 文本节点等等
+        console.log(ul.childNodes);
+        console.log(ul.childNodes[0].nodeType);
+        console.log(ul.childNodes[1].nodeType);
+        // 2. children 获取所有的子元素节点 也是我们实际开发常用的
+        console.log(ul.children);
+
+        // 子节点的另外操作
+        var ol = document.querySelector('ol');
+        // 1. firstChild 第一个子节点 不管是文本节点还是元素节点
+        console.log(ol.firstChild);
+        console.log(ol.lastChild);
+        // 2. firstElementChild 返回第一个子元素节点 ie9才支持
+        console.log(ol.firstElementChild);
+        console.log(ol.lastElementChild);
+        // 3. 实际开发的写法  既没有兼容性问题又返回第一个子元素
+        console.log(ol.children[0]);
+        console.log(ol.children[ol.children.length - 1]);
+
+        // 兄弟节点
+        var div = document.querySelector('.bro');
+        // 1.nextSibling 下一个兄弟节点 包含元素节点或者 文本节点等等
+        console.log(div.nextSibling);
+        console.log(div.previousSibling);
+        // 2. nextElementSibling 得到下一个兄弟元素节点
+        console.log(div.nextElementSibling);
+        console.log(div.previousElementSibling);
+    </script>
+</body>
+
+</html>

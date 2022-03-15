@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./lib/jquery.js"></script>
+</head>
+<script>
+    // $.get(url, [data], [callback])
+    // 参数名	参数类型	是否必选	说明
+    // url	string	是	要请求的资源地址
+    // data	object	否	请求资源期间要携带的参数
+    // callback	function	否	请求成功时的回调函数
+    $(function() {
+        $('#btnGet').on('click', function() {
+            $.get('http://www.liulongbin.top:3006/api/getbooks', function(res) {
+                console.log(res);
+            })
+        })
+    })
+
+    $(function() {
+        $('#btnGETINFO').on('click', function() {
+            $.get('http://www.liulongbin.top:3006/api/getbooks', {
+                id: 1
+            }, function(res) {
+                console.log(res);
+            })
+        })
+
+    })
+
+    // $.post(url, [data], [callback])
+    // 参数名	参数类型	是否必选	说明
+    // url	string	是	提交数据的地址
+    // data	object	否	要提交的数据
+    // callback	function	否	数据提交成功时的回调函数
+    $(function() {
+        $('#btnPOST').on('click', function() {
+            $.post('http://www.liulongbin.top:3006/api/addbook', {
+                bookname: '水浒传',
+                author: '施耐庵',
+                publisher: '天津图书出版社'
+            }, function(res) {
+                console.log(res);
+            })
+        })
+    })
+</script>
+
+<body>
+    <button id="btnGet">发起不带参数的get请求</button>
+    <button id="btnGETINFO">发起单参数的GET请求</button>
+    <button id="btnPOST">发起POST请求</button>
+</body>
+
+</html>

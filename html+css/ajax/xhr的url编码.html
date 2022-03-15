@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // URL 地址中， 只允许出现英文相关的字母、 标点符号、 数字， 因此， 在 URL 地址中不允许出现中文字符。
+        // 如果 URL 中需要包含中文这样的字符， 则必须对中文字符进行编码（ 转义）。
+        // URL编码的原则： 使用安全的字符（ 没有特殊用途或者特殊意义的可打印字符） 去表示那些不安全的字符。
+        // URL编码原则的通俗理解： 使用英文字符去表示非英文字符。
+
+        // encodeURI() 编码的函数
+        // decodeURI() 解码的函数
+        var result
+        result = encodeURI('西游记')
+        console.log(result);
+        result = decodeURI('%E8%A5%BF%E6%B8%B8%E8%AE%B0')
+        console.log(result);
+    </script>
+</body>
+
+</html>
