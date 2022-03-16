@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=
+  , initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //创建Symbol
+        let s = Symbol();
+        console.log(s, typeof s);
+        let s2 = Symbol('华工')
+        console.log(s2);
+        let s3 = Symbol('华工')
+        console.log(s2 === s3); //false
+
+        //Symbol.for创建 这里Symbol是对象 上面是函数 这种数据为函数对象
+        //可以通过描述字符串得出唯一Symbol值
+        let s4 = Symbol.for('华工');
+        let s5 = Symbol.for('华工');
+        console.log(s4 === s5); //true
+
+        // 不能与其他数据运算 自己也不可以
+        let result = s + 100;
+        let result1 = s > 100;
+        let result2 = s + s;
+
+        // 数据类型 USONB
+        // u undefined
+        // s string Symbol
+        // o object 
+        // n null number
+        // b boolean bigint
+    </script>
+</body>
+
+</html>

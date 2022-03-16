@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // get 和 set  
+        class Phone {
+            constructor(name) {
+                this.name = name;
+            }
+            get name() {
+                    console.log("setter");
+                    return this._name;
+                }
+                //不用_name会一直循环 this.name=name会调用set 又会执行this.name=name
+            set name(name) {
+                console.log('getter');
+                this._name = name
+            }
+        }
+
+        //实例化对象
+        let s = new Phone();
+
+        // console.log(s.price);
+        s.name = 'free';
+    </script>
+</body>
+
+</html>

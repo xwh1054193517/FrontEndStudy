@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        async function fn(params) {
+            //返回一个字符串
+            // return 'abc'
+
+            // 返回的结果不是一个promise类型对象 那就是成功的promise
+            // return;
+
+            // 抛出错误 返回一个失败的promise
+            // throw new Error('出错')
+
+            // 返回的结果如果是一个promise对象 由这个Promise决定
+            return new Promise((resolve, reject) => {
+                resolve('成功的值')
+                    // reject('失败的错误')
+            })
+        }
+
+        const result = fn()
+        console.log(result);
+
+        // 调用then
+        result.then(value => {
+            console.log(value);
+        }, err => {
+            console.warn(err);
+        })
+    </script>
+</body>
+
+</html>

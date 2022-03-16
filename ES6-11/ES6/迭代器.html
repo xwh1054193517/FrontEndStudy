@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // const xiyou = ['唐僧', '孙悟空', '猪八戒', '沙僧']
+
+        // // 使用 for in  v保存的是键名
+        // for (let v in xiyou) {
+        //     console.log(v);
+        // }
+
+        // // 使用for of v保存的是键值
+        // for (let v of xiyou) {
+        //     console.log(v);
+        // }
+        // console.log(xiyou); //Symbol.iterator
+
+        // let iterator = xiyou[Symbol.iterator]();
+        // console.log(iterator.next());
+        // console.log(iterator.next());
+        // console.log(iterator.next());
+        // console.log(iterator.next());
+        // console.log(iterator.next());
+
+
+        //声明一个对象
+        const banji = {
+                name: "终极一班",
+                stus: [
+                    'xiaoming',
+                    'xiaoning',
+                    'xiaotian',
+                    'knight'
+                ],
+                [Symbol.iterator]() {
+                    let index = 0
+                    return {
+                        next: () => {
+
+                            if (index < this.stus.length) {
+                                const result = {
+                                        value: this.stus[index],
+                                        done: false
+                                    }
+                                    // 下表自增
+                                index++;
+                                return result;
+                            } else {
+                                return {
+                                    value: undefined,
+                                    done: true
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            //遍历这个对象
+        for (let v of banji) {
+            console.log(v);
+        }
+
+        // banji.stusssss.forEach()
+    </script>
+</body>
+
+</html>

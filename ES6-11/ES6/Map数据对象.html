@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //声明map
+        let m = new Map()
+
+        //添加
+        m.set('name', 'xu')
+        m.set('change', function() {
+            console.log('我改变你');
+        })
+        let key = {
+            school: 'adsf'
+        }
+        m.set(key, ['北京', '伤害'])
+
+        console.log(m.size);
+        console.log(m);
+
+        //删除
+        m.delete('name')
+
+        //获取 返回的是数组 
+        console.log(m.get('change'));
+        console.log(m.get(key));
+
+        // //清空
+        // m.clear()
+
+        // 遍历
+        for (let v of m) {
+            console.log(v);
+        }
+    </script>
+</body>
+
+</html>
