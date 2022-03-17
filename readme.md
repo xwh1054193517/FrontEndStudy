@@ -5,14 +5,14 @@
 * HTML
 * CSS
 * JAVASCRIPT(ECMASCRIPT DOM BOM)
-* AJAX(AXIOS)
-* ES6
-* Promise
+* AJAX(AXIOS 熟悉)
+* ES6（熟悉）
+* Promise(熟悉)
+* nodejs（express 了解)
+  
 
 ## 待努力
-
-* nodejs
-* express
+* webpack
 * vue 
 * typescript
 * electronic
