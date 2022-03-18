@@ -1,0 +1,1206 @@
+.site-head {
+  min-width: 1152px;
+  height: 150px;
+
+  // 最顶部
+  .topbar{
+    min-width: 1152px;
+    height: 32px;
+    background-color: #2A2A2A;
+    color: white;
+    line-height: 32px;
+
+
+    a{
+      color:white
+    }
+
+    .shortcut-links{
+      float:left
+    }
+
+    .shortcut-links>ul>li{
+      float:left;
+      margin-right: 18px;
+      font-size: 14px;
+    }
+
+    .shortcut-links>ul>li.have-menu{
+      padding-right: 12px;
+      position: relative;
+
+      .arrow{
+        position: absolute;
+        right: 0;
+        top: 50%;
+        margin-top: -6px;
+        width: 12px;
+        height: 12px;
+        transition:transform .2s ease 0s;
+      }
+
+      &:hover .arrow{
+        transform: rotate(180deg);
+      }
+
+      .arrow b{
+        position: absolute;
+        left: 4px;
+        top:2px;
+        width: 6px;
+        height: 6px;
+        background-color: #fff;
+        transform: rotate(45deg);
+      }
+
+      .arrow i{
+        position: absolute;
+        left: 4px;
+        top: 0.5px;
+        width: 6px;
+        height: 6px;
+        background-color: #2A2A2A;
+        transform: rotate(45deg);
+      }
+
+      .menu{
+        position: absolute;
+        top: 30px;
+        left: 0;
+        z-index: 9999;
+        /* 隐藏 */
+        display: none;
+        padding-top: 10px;
+        background-color: white;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.20);
+        padding: 10px;
+
+        .menu-list{
+          li{
+            height: 20px;
+            line-height: 20px;
+          }
+          a{
+            font-size: 12px;
+            color: #1C1F21;
+            line-height: 20px;
+            
+            &:hover{
+              color: orange;
+            }
+          }
+
+        }
+      }
+
+      .sqmenu{
+        width: 110px;
+      }
+
+      .scmenu{
+        width: 80px;
+      }
+
+      .jdmsmenu{
+        width: 80px;  
+      }
+
+      /* 鼠标碰到have-menu，就让menu出现 */
+      &:hover .menu{
+        display: block;
+      }
+    }
+  
+  .topbar-r{
+    float: right;
+    width: 225px;
+
+    a,span{
+      margin-right: 11px;
+      font-size: 15px;
+    }
+
+    a:last-child{
+      margin-right: 0;
+    }
+  }
+
+  }
+
+
+  //导航栏
+    .main-nav{
+      min-width: 1152px;
+      height: 40px;
+      background-color: #20BD9A;
+
+      ul li{
+        float: left;
+        margin-right: 18px;
+
+        a{
+          line-height: 40px;
+          color: white;
+          font-size: 16px;
+        }
+        .menu{
+          position: absolute;
+          top: 35px;
+          left: 0;
+          background-color: white;
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.20);
+          padding: 10px;
+          display: none;
+
+          dl dd a{
+            color: #1C1F21;
+            font-size: 12px;
+            line-height: 20px;
+
+            &:hover{
+              color:orange
+            }
+          }
+        }
+        .jjzyxmenu{
+          width: 150px;
+        }
+
+        .gtymenu{
+          width: 90px;
+        }
+
+        .ddwlmenu{
+          width: 190px;
+        }
+
+        .sdlymenu{
+          width: 160px;
+        }
+
+
+
+      }
+
+      ul li:hover .menu{
+        display: block;
+      }
+      
+
+      
+
+      ul li.have-menu{
+        padding-right: 16px;
+        position: relative;
+  
+        //画小三角
+        &::before{
+          content: '';
+          position: absolute;
+          right: 0;
+          top: 18px;
+          width: 0px;
+          height: 0px;
+          border: 4px solid transparent;
+          border-bottom: none;
+          border-top-color: white;
+          transition: transform .5s ease 0s;
+        }
+  
+        &:hover::before{
+          transform: rotate(180deg);
+        }
+      }
+    }
+
+    //头部主要部分
+    .header-con{
+      height: 36px;
+      padding: 21px 0;
+
+      h1{
+        float: left;
+        font-size: 24px;
+        color: #20BD9A;
+        line-height: 36px;
+        font-weight: bold; 
+      }
+
+      .soso-box{
+        float: left;
+        margin-left: 20px;
+        width: 405px;
+        padding-top: 2px;
+
+      input{
+        float: left;
+        width: 361px;
+        height: 28px;
+        border: 1px solid #20BD9A;
+        /* 分别按四个角进行设置 */
+        border-radius: 4px 0 0 4px;
+        font-size: 14px;
+        /* 取消默认的外线（外线是文本框特有的东西） */
+        outline: none;
+        padding-left: 10px;
+      }
+
+      .btn{
+        float: left;
+        width: 32px;
+        height: 30px;
+        background-color: #20BD9A;
+        color: white;
+        text-align: center;
+        line-height: 30px;
+        font-size: 18px;
+        border-radius: 0 4px 4px 0;
+      }
+      }
+    }
+
+}
+
+
+.banner{
+  //轮播图
+  position: relative;
+  overflow: hidden;
+
+  .carousel_list{
+    width: 600%;
+    /* 清除浮动 */
+    overflow: hidden;
+    transition: transform .5s ease 0s;
+
+    li{
+      float: left;
+      width: 16.666%;
+
+      img{
+        width: 100%;
+          /* 白边的处理 */
+        vertical-align: middle;
+      }
+    }
+  }
+
+  .center-wrap{
+       /* 压盖，绝对定位 */
+       position: absolute;
+       top: 0;
+       left: 0;
+       width: 1152px;
+       left: 50%;
+       margin-left: -576px;
+       /* 这里的100%高度绝对不能省略，省略了，它的height就是0 */
+       /* 那么它的子盒子设置16.6%就没有意义了 */
+       height: 100%;
+
+       .banner-nav{
+         height: 100%;
+
+         width: 652px;
+         position: relative;
+
+         >ul{
+          height: 100%;
+
+          >li{
+            height: 16.66%;
+            width: 296px;
+            background-color: rgba(0, 0, 0, .53);
+            border-bottom: 1px solid #9e9e9e;
+            /* box-sizing:border-box属性的作用就是让height属性是盒子的总高度，这种情况：在盒子的高度是百分比写的，但是盒子有边框的时候 */
+            /* 此时就要让盒子的边框涵盖在height里面，就要使用box-sizing属性 */
+            box-sizing: border-box;
+            position: relative;
+
+            &:last-child{
+              border-bottom: none;
+            }
+
+            dl{
+              position: absolute;
+              height: 48px;
+              top: 50%;
+              left: 42px;
+              margin-top: -24px;
+              color: white;
+
+              dt{
+                font-size: 18px;
+                line-height: 26px;
+                height: 26px;
+              }
+
+              dd{
+                font-size: 16px;
+                line-height: 22px;
+                height: 22px; 
+              }
+            }
+            &::before{
+              content: '';
+              position: absolute;
+              background-image: url(../images/icons.png);
+              top: 50%;
+              left: 10px;
+            }
+          }
+
+          >li.hot::before{
+            width: 22px;
+            height: 18px;
+            background-position: -29px -399px;
+            margin-top: -9px;
+          }
+
+          >li.hk::before {
+            width: 18px;
+            height: 21px;
+            background-position: -28px -217px;
+            margin-top: -10.5px;
+            left: 13px;
+        }
+        >li.jp::before {
+          width: 24px;
+          height: 19px;
+          background-position: -25px -171px;
+          margin-top: -9.5px;
+      }
+        >li.as::before {
+          width: 18px;
+          height: 19px;
+          background-position: -28px -262px;
+          margin-top: -9.5px;
+          left: 12px;
+      }
+      >li.eu::before {
+        width: 20px;
+        height: 14px;
+        background-position: -29px -351px;
+        margin-top: -7px;
+        left: 11px;
+    }
+    >li.au::before {
+      width: 18px;
+      height: 17px;
+      background-position: -28px -305px;
+      margin-top: -8.5px;
+      left: 12px;
+  }
+  >li.current {
+    background-color: rgba(0, 0, 0, .63);
+    }
+        
+        }
+       
+
+        .menus-box .menu{
+          /* 让menu隐藏 */
+          display: none;
+          position: absolute;
+          left: 296px;
+          top: 0;
+          height: 100%;
+          background-color: rgba(0, 0, 0, .63);
+          color: white;
+          padding: 16px;
+          /* 加上box-sizing属性之后，height: 100%; 就是盒子的总高度了 */
+          /* 就不需要减padding了，因为百分比怎么减padding呀？ */
+          box-sizing: border-box;
+          z-index: 99999;
+
+          a{
+            color: white;
+          }
+
+          dl{
+            margin-bottom: 16px;
+
+            dd {
+              line-height: 25px;
+              font-size: 15px;
+          }
+          }
+    }
+
+    .menus-box .menu.current {
+      display: block;
+  }
+      }
+
+  .leftbtn{
+    position: absolute;
+    width: 28px;
+    height: 44px;
+    background: url(../images/icons.png) no-repeat -21px -94px;
+    top: 50%;
+    left: -38px;
+    margin-top: -22px;
+
+
+  }
+  .rightbtn {
+    position: absolute;
+    width: 28px;
+    height: 44px;
+    background: url(../images/icons.png) no-repeat -21px -29px;
+    top: 50%;
+    right: -38px;
+    margin-top: -22px;
+    }
+
+  .leftbtn:hover,.rightbtn:hover{
+     /* 透明度 */
+     opacity: 0.8;
+  }
+
+
+  }
+
+  .circles {
+    width: 160px;
+    height: 20px;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    margin-left: -75px;
+    z-index: 9999;
+
+    li {
+      float: left;
+      width: 20px;
+      height: 20px;
+      background-color: rgb(89, 235, 145);
+      margin-right: 10px;
+      border-radius: 10px;
+      transition: all .5s ease 0s;
+      /* 鼠标指针变为小手 */
+      cursor: pointer;
+
+      &:last-child{
+        margin-right: 0;
+      }
+  }
+  li.current {
+    width: 40px;
+    background-color: #20BD9A;
+  }
+}
+
+}
+
+.hot-ads{
+  // 热门广告
+  margin: 32px 0;
+
+  ul li{
+    float: left;
+    width: 264px;
+    height: 110px;
+    margin-right: 32px;
+
+    &:last-child{
+      margin-right: 0;
+    }
+  }
+}
+
+// 新鲜甩尾
+.xxsw{
+  padding-top: 40px;
+  height: 698px;
+  background-color: #F7F7F7;
+
+  .hd{
+    margin-bottom: 32px;
+
+    h2{
+      float: left;
+    }
+  }
+
+  ul li{
+    float: left;
+    width: 264px;
+    height: 270px;
+    margin-right: 32px;
+    background: white;
+    margin-bottom: 32px;
+
+    &:nth-child(4n){
+      margin-right: 0;
+    }
+
+    .wordbox{
+      padding: 15px;
+      color: #1C1F21;
+      font-size: 14px;
+    }
+
+    &:hover{
+      box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.20);
+    }
+  }
+}
+
+
+.content-part {
+// 机场自由行
+  h2{
+    font-size: 36px;
+    font-weight: bold;
+    color: #1C1F21;
+  }
+
+  em{
+    position: relative;
+    top: 20px;
+    left: 10px;
+    color: #1C1F21;
+    float: left;
+  }
+}
+
+.common-style {
+  // 通用样式
+  height: 698px;
+  padding-top: 40px;
+
+  .hd{
+
+    h2 {
+      float: left;
+    }
+
+    em {
+      float: left;
+    }
+  }
+  
+  .bd{
+    padding-top: 32px;
+
+    >ul>li{
+      float: left;
+      margin-right: 32px;
+      margin-bottom: 32px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08);
+      background-color: white;
+
+      &:hover{
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.20);
+      }
+
+      &:nth-child(3),&:nth-child(7){
+        margin-right: 0;
+      }
+
+      .tag{
+        position: absolute;
+        width: 74px;
+        height: 40px;
+        color: white;
+        background-color: rgba(0, 0, 0, .55);
+        bottom: 103px;
+        left: 0;
+        text-align: center;
+        line-height: 40px;
+        /* 图片一触碰，就会有transform变形，那么此时会神奇的盖住tag，所以为了防止盖住，我们应该设置z-index属性值 */
+        z-index: 9999;
+      }
+
+
+    }
+
+    >ul>li.big-grid{
+      width: 560px;
+      height: 270px;
+      position: relative;
+
+      .info{
+        position: absolute;
+        width: 560px;
+        height: 103px;
+        color: white;
+        background-color: rgba(0, 0, 0, .55);
+        bottom: 0;
+        left: 0;
+        padding: 30px 26px;
+        box-sizing: border-box;
+        line-height: 26px;
+      }
+    }
+
+    >ul>li.pro-grid{
+      width: 264px;
+      height: 270px;
+
+      .picbox{
+        overflow: hidden;
+        position: relative;
+        height: 184px;
+
+        .tag{
+          bottom: 0;
+        }
+      }
+
+      .wordbox{
+        padding: 14px;
+        font-size: 14px;
+        color: #1C1F21;
+        line-height: 26px;
+      }
+    }
+  }
+}
+
+.content-part {
+  .hd{
+
+    nav {
+      float: right;
+      width: 546px;
+
+      ul {
+        padding-top: 16px;
+
+        li {
+          float: left;
+          margin-right: 16px;
+          font-size: 14px;
+
+          &:last-child{
+            margin-right: 0;
+          }
+
+          a{
+            color: rgba(0, 0, 0, 0.85);
+          }
+        }
+        li.current a{
+          color: #20BD9A;
+        }
+      }
+    }
+  }
+  
+
+  
+  img{
+    /* 公共的一个特效：鼠标触碰图片，能够有放大效果 */
+    transition: transform .4s ease 0s;
+
+    &:hover{
+      transform: scale(1.1);
+    }
+  }
+
+  li{
+    overflow: hidden;
+    
+    .picbox{
+      height: 184px;
+      overflow: hidden;
+    }
+  }
+
+  .grid{
+    overflow: hidden;
+  }
+  
+  .more-grid{
+    width: 264px;
+    height: 270px;
+    background-image: linear-gradient(180deg, #34E3BC 0%, #15AF7A 98%);
+    box-sizing: border-box;
+    position: relative;
+
+    a{
+      display: block;
+    height: 270px;
+    padding-top: 46px;
+    box-sizing: border-box;
+    }
+
+    p{
+      text-align: center;
+      color: white;
+      line-height: 24px;
+      font-size: 15px;
+    }
+
+    .iconfont{
+      position: absolute;
+      font-size: 48px;
+      color: white;
+      width: 48px;
+      height: 48px;
+      left: 50%;
+      top: 118px;
+      margin-left: -24px;
+    }
+    
+    &:hover .iconfont {
+      animation: ud .4s ease 0s infinite alternate;
+  }
+    ul{
+      margin-top: 112px;
+      padding-left: 40px;
+
+      li{
+        color: white;
+        float: left;
+        border-right: 1px solid white;
+        padding: 0 9px;
+        height: 14px;
+        line-height: 14px;
+        font-size: 14px;
+
+        &:last-child {
+          border-right: none;
+        }
+      }
+    }
+  }
+}
+
+//动画
+@keyframes ud {
+  from {
+    transform: translateY(-10px);
+  }
+  to {
+      transform: translateY(10px);
+  }
+}
+
+// 当地玩乐
+.ddwl{
+  padding-top: 40px;
+  height: 546px;
+  background-color: #f7f7f7;
+
+  h2{
+    float: left;
+  }
+
+  .hd nav{
+    width: 349px;
+  }
+
+  .bd{
+    padding-top: 32px;
+
+    .col{
+      float: left;
+      float: left;
+      width: 364px;
+      height: 480px;
+      margin-right: 30px;
+
+      &:last-child{
+        margin-right: 0;
+      }
+    }
+
+    .bigpicbox{
+      overflow: hidden;
+      width: 364px;
+      height: 270px;
+      position: relative;
+      margin-bottom: 30px;
+
+      .info{
+        position: absolute;
+        width: 364px;
+        height: 104px;
+        background-color: rgba(0, 0, 0, .53);
+        bottom: 0;
+        left: 0;
+        padding: 21px 17px 0;
+        box-sizing: border-box;
+        color: white;
+        font-size: 14px;
+
+        .bottom{
+          padding-top: 6px;
+
+          .tag{
+            float: left;
+          }
+
+          .price{
+            float: right;
+
+            strong{
+              color:#36dfba
+            }
+          }
+        }
+      }
+    }
+  
+    .grid{
+      width: 364px;
+      height: 120px;
+      background-color: white;
+      margin-bottom: 30px;
+
+      .picbox{
+        float: left;
+        width: 120px;
+        height: 120px;
+        overflow: hidden;
+      }
+
+      .wordbox{
+        float: left;
+        width: 244px;
+        height: 120px;
+        padding: 26px 18px 0;
+        box-sizing: border-box;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08);
+        font-size: 14px;
+        color: #000;
+      }
+
+    }
+
+    .more-grid {
+      width: 364px;
+      background-image: linear-gradient(180deg, #FF6374 1%, #FF7368 98%);
+
+      ul{
+        padding-left: 19px;
+      }
+    }
+  }
+}
+
+.ddwl .bd .grid:hover,
+.ddwl .bd .bigpicbox:hover,
+.ddwl .bd .more-grid:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.20);
+}
+
+
+// 当地特色体验
+.tsddty{
+  height: 456px;
+
+  .center-wrap{
+    padding-top: 40px;
+
+    h2{
+      text-align: center;
+    }
+  }
+
+  .bd{
+    padding-top: 32px;
+
+    ul li{
+      float: left;
+      width: 264px;
+      height: 290px;
+      margin-right: 32px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08);
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      &:hover{
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.20);
+      }
+
+      .wordbox{
+        padding: 16px 9px 0;
+
+        .proname{
+          font-weight: bold;
+          font-size: 16px;
+          color: #000000;
+          height: 48px;
+        }
+
+        .score{
+          font-size: 13px;
+          color: #FA6400;
+        }
+
+        .comment{
+          font-size: 13px;
+          color: #000000;
+        }
+      }
+    }
+  }
+}
+
+// 最世界·深度旅行
+.zsjsdlx{
+  height: 738px;
+  background-color: #f7f7f7;
+
+  .hd {
+
+    em{
+      float: left;
+      width: 307px;
+    }
+
+    nav{
+      float: right;
+      width: 85px;
+    }
+  }
+
+  .bd{
+
+    .more-grid{
+      background-image: linear-gradient(180deg, #BD5EE8 0%, #832ABB 98%);
+
+      ul{
+        padding-left: 41px;
+      }
+    }
+  }
+}
+
+
+// 跟团自助游
+.gtbzzy{
+
+  .hd{
+    nav{
+      width: 157px;
+    }
+  }
+
+  .bd{
+    .more-grid{
+      background-image: linear-gradient(180deg, #41D8E9 0%, #3685EA 98%);
+
+      ul{
+        padding-left: 67px;
+      }
+    }
+  }
+}
+
+
+.big-grid.havehover{
+    .mask{
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, .7);
+      /* 总透明度 */
+      opacity: 0;
+      /* 过渡 */
+      transition: opacity .4s ease 0s;
+    }
+
+    &:hover .mask{
+      opacity: 1;
+    }
+    
+    .circle{
+      position: absolute;
+      top: -106px;
+      left: 50%;
+      margin-left: -53px;
+      width: 106px;
+      height: 106px;
+      border: 1px solid white;
+      border-radius: 50%;
+      color: white;
+      box-sizing: border-box;
+      padding-top: 25px;
+      font-size: 18px;
+      transition: top .5s ease 0s;
+
+      p{
+        text-align: center;
+      }
+
+    }
+
+    &:hover .circle{
+      top: 62px;
+    }
+    .word{
+      position: absolute;
+      bottom: -100px;
+      left: 10px;
+      color: white;
+      transition: bottom .5s ease 0s;
+    }
+
+    &:hover .word{
+      bottom: 30px;
+    }
+  }
+
+// 底部footer
+footer{
+
+  .part1{
+    height: 220px;
+    background-color: #f7f7f7;
+
+    ul{
+      padding-top: 36px;
+
+      li{
+        float: left;
+        border-right: 1px solid #1C1F21;
+        padding: 0 30px;
+        height: 16px;
+        line-height: 16px;
+
+        a{
+          color: #1C1F21;
+          font-size: 16px;
+        }
+
+        &:first-child {
+          padding-left: 0;
+        }
+        &:last-child {
+          border-right: none;
+          padding-right: 0;
+        }
+    
+      }
+    }
+
+    .dlbox{
+      padding-top: 40px;
+    }
+
+    dl{
+      width: 289px;
+      float: left;
+      padding-left: 75px;
+      margin-right: 30px;
+      position: relative;
+
+      &:last-child {
+        margin-right: 0;
+      }
+      
+      dt{
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+      
+      &::before{
+        content: '';
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        background-image: url(../images/icons.png);
+        left: 0;
+      }
+
+      dd{
+        font-size: 14px;
+      }
+    }
+    dl.txfw::before {
+      background-position: -150px -178px;
+    }
+
+    dl.ccsx::before {
+      background-position: -150px -104px;
+    }
+
+    dl.axph::before {
+      background-position: -150px -31px;
+    }
+  }
+
+  .part2{
+    height: 225px;
+    background-color: #1C1f21;
+
+    .r1{
+      padding-top: 48px;
+      color: white;
+
+      h2{
+        float: left;
+        font-size: 46px;
+      }
+
+      .slogan{
+        float: left;
+        width: 532px;
+        font-size: 14px;
+        margin-left: 21px;
+        position: relative;
+        top: 14px;
+      }
+    }
+
+    .links{
+      padding-top: 30px;
+
+      li{
+        float: left;
+        border-right: 1px solid white;
+        padding: 0 10px;
+        font-size: 14px;
+        line-height: 14px;
+        height: 14px;
+
+        a{
+          color: white;
+        }
+
+        &:first-child {
+          padding-left: 0;
+        }
+
+        &:last-child {
+          border-right: none;
+        }
+      }
+    }
+  }
+
+  .copyrights{
+    color: white;
+    padding-top: 20px;
+    font-size: 14px;
+
+    a{
+      color:white
+    }
+  }
+}
+
+// 返回顶部按钮
+.backtotop{
+  position: fixed;
+  bottom: 80px;
+  right: 80px;
+  width: 80px;
+  height: 80px;
+  background: #ccc;
+  font-size: 20px;
+  text-align: center;
+  padding-top: 12px;
+  box-sizing: border-box;
+  color: #000;
+  /* 隐藏元素 */
+  display: none;
+}

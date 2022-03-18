@@ -1,0 +1,150 @@
+/* 重置页面样式 */
+
+html {
+    color: #000;
+    background: #fff;
+}
+
+
+/* <fieldset> 标签将表单内容的一部分打包，生成一组相关表单的字段。
+legend 元素为 fieldset 元素定义标题（caption）。
+pre 元素可定义预格式化的文本。被包围在 pre 元素中的文本通常会保留空格和换行符。而文本也会呈现为等宽字体。
+<code> 标签是一个短语标签，用来定义计算机代码文本。
+<blockquote> 标签定义块引用。<blockquote> 与 </blockquote> 之间的所有文本都会从常规文本中分离出来
+<abbr> 标签指示简称或缩写 <acronym> 标签定义首字母缩写
+address, caption, cite, code, dfn, em, strong, th, var
+caption 元素定义表格标题。
+<cite> 标签通常表示它所包含的文本对某个参考文献的引用，比如书籍或者杂志的标题。
+<dfn>	定义一个定义项目。
+<var>	定义变量。您可以将此标签与 <pre> 及 <code> 标签配合使用。 */
+
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td {
+    margin: 0;
+    padding: 0;
+}
+
+table {
+    /* border-collapse 属性设置表格的边框是否被合并为一个单一的边框，还是像在标准的 HTML 中那样分开显示。 */
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+fieldset,
+img {
+    border: 0
+}
+
+
+/* 字体不斜体不加粗 */
+
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+strong,
+th,
+var {
+    font-style: normal;
+    font-weight: normal;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+
+/* 标题字体水平靠左 */
+
+caption,
+th {
+    text-align: left;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    /* 继承html字体大小 */
+    font-size: 100%;
+    font-weight: normal
+}
+
+
+/* <q> 标签用于简短的行内引用 */
+
+q:before,
+q:after {
+    content: ''
+}
+
+
+/* font-variant 属性设置小型大写字母的字体显示文本，这意味着所有的小写字母均会被转换为大写，但是所有使用小型大写字体的字母与其余文本相比，其字体尺寸更小。 */
+
+abbr,
+acronym {
+    border: 0;
+    font-variant: normal
+}
+
+
+/* 上标 */
+
+sup {
+    /* 把元素的顶端与父元素字体的顶端对齐 */
+    vertical-align: text-top
+}
+
+
+/* 下标 */
+
+sub {
+    /* 把元素的顶端与父元素字体的顶端对齐 */
+    vertical-align: text-bottom
+}
+
+input,
+textarea,
+select {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    /* *和_给不同浏览器识别，识别不到的报错并跳到下个CSS不执行 */
+    *font-size: 100%
+}
+
+legend {
+    color: #000
+}
+
+a {
+    text-decoration: none;
+}
