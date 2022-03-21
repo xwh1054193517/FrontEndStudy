@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>天气案例_监视属性_简写</title>
+    <!-- 引入Vue -->
+    <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+
+<body>
+    <!-- 准备好一个容器-->
+    <div id="root">
+        姓：<input type="text" v-model="firstName"> <br> 名：
+        <input type="text" v-model="lastName"> <br> <br> 全名：
+        <span>{{fullName}}</span>
+    </div>
+</body>
+<script>
+    const vm = new Vue({
+        el: '#root',
+        data: {
+            firstName: '张',
+            lastName: '三',
+            fullName: '张三'
+        },
+        // watch: {
+        //     firstName(newValue, oldValue) {
+        // 这里的定时器采用箭头函数this指向FirstName的this 也就是vm
+        //         setTimeout(() => {
+        //             this.fullName = newValue + this.lastName
+        //         }, 1000);
+
+        //     },
+        //     lastName(val) {
+        //         this.fullName = this.firstName + val;
+        //     }
+        // }
+        // computed: {
+        //     fullName() {
+        //         console.log('被调用咯');
+        //         return this.firstName + this.lastName
+        //     }
+        // }
+    })
+</script>
+
+
+</html>

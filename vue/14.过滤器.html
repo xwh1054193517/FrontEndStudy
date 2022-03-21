@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>过滤器</title>
+    <script type="text/javascript" src="../js/vue.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/dayjs/1.10.6/dayjs.min.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        <h2>时间</h2>
+        <h3>当前时间戳：{{time}}</h3>
+        <h3>转换后时间：{{time | timeFormater()}}</h3>
+        <h3>转换后时间：{{time | timeFormater('YYYY-MM-DD HH:mm:ss')}}</h3>
+        <h3>截取年月日：{{time | timeFormater() | mySlice}}</h3>
+    </div>
+</body>
+
+<script type="text/javascript">
+    Vue.config.productionTip = false
+        // 全局过滤器
+    Vue.filter('mySlice', function(value) {
+        console.log(value);
+        return value.slice(0, 11)
+    })
+    new Vue({
+        el: '#root',
+        data: {
+            time: 1626750147900,
+        },
+        // 局部过滤器
+        filters: {
+            timeFormater(value, str = "YYYY年MM月DD日 HH:mm:ss") {
+                return dayjs(value).format(str)
+            }
+        }
+    })
+</script>
+
+</html>

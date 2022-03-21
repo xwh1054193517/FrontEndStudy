@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        <!-- 遍历数组 -->
+        <h2>人员列表</h2>
+        <input type="text" placeholder="请输入名字" v-model="keyWord">
+        <ul>
+            <li v-for="(p,index) in filPersons" :key="p.id">
+                {{p.name}}-{{p.age}}--{{p.sex}}
+            </li>
+        </ul>
+
+    </div>
+
+    <script>
+        Vue.config.productionTip = false
+        new Vue({
+            el: '#root',
+            data: {
+                keyWord: '',
+                persons: [{
+                    id: '001',
+                    name: '马冬梅',
+                    age: 19,
+                    sex: '女'
+                }, {
+                    id: '002',
+                    name: '周冬雨',
+                    age: 20,
+                    sex: '女'
+                }, {
+                    id: '003',
+                    name: '周杰伦',
+                    age: 21,
+                    sex: '男'
+                }, {
+                    id: '004',
+                    name: '温兆伦',
+                    age: 22,
+                    sex: '男'
+                }],
+
+            },
+            // watch: {
+            //     keyWord: {
+            //         immediate: false,
+            //         handler(val) {
+            //             //字符串包含空字符串
+            //             this.filPersons = this.persons.filter((p) => {
+            //                 return p.name.indexOf(val) !== -1
+            //                     // return p.name.includes(val)
+            //             })
+            //         }
+            //     }
+            // },
+            computed: {
+                filPersons() {
+                    return this.persons.filter((p) => {
+                        return p.name.indexOf(this.keyWord) !== -1
+                            // return p.name.includes(val)
+                    })
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
